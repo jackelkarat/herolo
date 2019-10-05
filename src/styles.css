@@ -1,0 +1,117 @@
+
+@import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* body {
+  background-color: darkcyan!important;
+} */
+body{
+  background: url('./assets/wheater.jpg');
+  background-size: cover;
+
+}
+.block_center {
+  text-align: center;
+  padding: 15px;
+}
+
+.date{
+  font-style: oblique;
+}
+.description, .date , .farenheint, .celsuis ,.toggle,.namecity{
+  color: white;
+}
+.toggle{
+  font: bold;
+}
+
+
+
+
+
+
+.wrapper {
+  width: 30%;
+  height: 534px;
+  margin: 5em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: black;
+  text-align: center;
+}
+/* img {
+  width: 60%;
+  margin: 0 20%;
+} */
+
+.city {
+  font-size: 2.2em;
+  font-weight: 100;
+}
+
+.temperature {
+  font-size: 3.5em;
+  font-weight: 100;
+}
+
+.description {
+  font-size: 1.2em;
+  font-weight: 100;
+}
+
+.tempM {
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.lookCity {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+}
+.cityName {
+  flex: 1 0 auto;
+  height: 25px;
+  border: 0.5 solid black;
+  padding: 0.5em;
+  margin: 0;
+}
+
+.btn {
+  background-color: blue;
+  border: 0;
+  width: 25%;
+  height: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+.btn {
+  line-height: 0!important;
+}
+
+.block_favorites{
+width: 100%;
+text-align: center;
+margin-bottom: 5em;
+}
+
+
+@media screen and (max-width:640px){
+  body{
+    background-size: auto;
+    }
+}
+

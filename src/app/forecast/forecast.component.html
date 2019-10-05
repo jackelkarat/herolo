@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="">
+      <form [formGroup]="forecastForm" class="center">
+    <div  class="">
+        <mat-form-field>
+            <input
+              type="text"
+              placeholder="Search City"
+              matInput
+              formControlName="forecastCity"
+              [matAutocomplete]="auto"
+              [(ngModel)]="searchauto"
+            />
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let city of cities | filter : searchauto" [value]="city">
+                {{ city }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <i class="material-icons" (click)="searchCity(forecastForm.value)" #search>search</i>
+    </div>
+  </form>
+</div>
+
+<div class="row">
+    <div class="block_favorites" *ngIf="forecast.length > 0">
+
+      <span *ngIf="searchFavorite == true" >
+      <button mat-button (click)="removefavorites(forecast, countfavorite)"><i class="fa fa-heart-o"></i> <span class=""> Remove from Favorites</span> </button>
+        </span>
+        <span *ngIf="searchFavorite == false">
+            <button mat-button color="light" (click)="addfavorites()"><i class="fa fa-heart"></i> <span class="addfavorite"> Add To Favorites</span></button>
+      </span>
+      <div class=""><mat-slide-toggle (click)="celsuisFarenheint()"> Fahrenheit/Celsius </mat-slide-toggle></div>
+
+      </div>
+          <div class="col-sm block_center" *ngFor="let dayWeather of forecast">
+                <h2 class="date">{{dayWeather.date | date: 'dd/MM'}}</h2>
+                <img src="http://openweathermap.org/img/wn/{{dayWeather?.img}}@2x.png">
+                <h2 class="description">{{dayWeather.description}}</h2>
+                <h3 class="farenheint" *ngIf="farenheint">{{dayWeather.temp}}F</h3>
+                <h3 class="celsuis" *ngIf="celsuis">{{dayWeather.temp | celsuis : 'C'}}C </h3>
+
+            </div>
+      </div>
+</div>

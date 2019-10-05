@@ -1,0 +1,16 @@
+<div class="container">
+
+  <div>
+      <div class="col-12 text-align-center"><mat-slide-toggle (click)="celsuisFarenheint()"> Fahrenheit/Celsius </mat-slide-toggle></div>
+
+  </div>
+  <div class="row">
+          <div class="col-sm block_center" *ngFor="let favorite of favorites">
+            <h2 class="date">{{favorite.date | date: 'dd/MM'}}</h2>
+            <h3 class="namecity">{{favorite.cityName}}</h3>
+            <img src="http://openweathermap.org/img/wn/{{favorite?.img}}@2x.png">
+            <h3 class="farenheint" *ngIf="farenheint">{{favorite.temp}}F</h3>
+            <h3 class="celsuis" *ngIf="celsuis">{{favorite.temp | celsuis : 'C'}}C </h3>
+    </div>
+        </div>
+      </div>
