@@ -62,7 +62,7 @@ export class WeatherService {
   searchForecast(city: string) {
     // tslint:disable-next-line:max-line-length
     return this.http
-      .get(`http://api.openweathermap.org/data/2.5/forecast?q=${city},us&appid=dd04ba20f8397aa356225600ed43c5b2&units=imperial`
+      .get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=dd04ba20f8397aa356225600ed43c5b2&units=imperial`
       )
       .pipe(map((response: Response) => response.json()));
   }

@@ -22,7 +22,8 @@ export class ForecastComponent implements OnInit {
   @ViewChild("search", { static: false }) search: ElementRef;
 
   cities: string[] = [
-    "new york",
+    "Tel Aviv",
+    "New York",
     "Orlando",
     "Texas",
     "London",
